@@ -1,5 +1,5 @@
 aiopApp.factory('userService', function($http, $location){
-    //url: 'https://'+$location.host()+':'+$location.port()+'/api/login',
+
     return{
         userId: undefined,
         token: undefined,

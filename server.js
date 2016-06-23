@@ -143,7 +143,7 @@ app.post('/api/resetPassword', function(req, res){
                         from: '"Rattrapage AIOP" <rattrapageAiop@gmail.com>', // sender address
                         to: req.body.email, // list of receivers
                         subject: 'Changement de mot de passe', // Subject line
-                        text: 'Pour changer votre mot de passe, veuillez vous rendre à l\'url suivante: '+os.hostname()+':3000/#/resetPassword/'+token+'. Ce lien est valide 2 heures.' // plaintext body
+                        text: 'Pour changer votre mot de passe, veuillez vous rendre à l\'url suivante: https://aiop.eu-gb.mybluemix.net/#/resetPassword/'+token+'. Ce lien est valide 2 heures.' // plaintext body
                     };
 
                     // send mail with defined transport object
