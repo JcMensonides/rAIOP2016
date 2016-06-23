@@ -110,7 +110,7 @@ aiopApp.controller('mainCtrl', function mainCtrl($scope, $uibModal, $cookies, us
         $scope.requestResetPasswordError = undefined
         $scope.requestResetPasswordModal = $uibModal.open({
             animation: true,
-            templateUrl: 'templates/RequestResetPasswordModal.html',
+            templateUrl: 'templates/requestResetPasswordModal.html',
             scope: $scope
         });
     };
