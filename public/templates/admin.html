@@ -1,0 +1,47 @@
+<div class="adminPage">
+    <button class="btn btn-success" ng-click="openCreateUserModal();">Ajouter un utilisateur</button>
+    <b>Liste des utilisateurs</b>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><b>Prénom</b></th>
+                <th><b>Nom</b></th>
+                <th><b>Email</b></th>
+                <th><b>Actions</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in userList | orderBy:'firstname'">
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <img src="img/editIcon.png" ng-click="openUpdateUserModal(user);"/>
+                    <img src="img/deleteIcon.png" ng-click="deleteUser(user);" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br/>
+    <b>Liste des Opérations effectuées</b>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><b>Type</b></th>
+                <th><b>Par</b></th>
+                <th><b>Sur</b></th>
+                <th><b>Date</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="operation in operations | orderBy:'date'">
+                <td>{{operation.operationType}}</td>
+                <td>{{operation.from}}</td>
+                <td>{{operation.on}}</td>
+                <td>{{operation.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

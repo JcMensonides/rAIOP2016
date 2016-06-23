@@ -1,0 +1,27 @@
+<div style="height: 44px; background:#387ef5; color: white; display: flex; align-items: center;">
+    <span style="margin-left: auto;">
+        Connexion
+    </span>
+    <span ng-click="loginModal.close();" style="margin-left: auto; padding-right: 10px;">
+        Annuler
+    </span>
+</div>
+<div class="modal-body">
+    <div class="form">
+        <div ng-show="$parent.loginError != undefined" style="color: red";>
+            {{$parent.loginError}}
+        </div>
+        <div class="form-group">
+            <label for="email">Adresse mail:</label>
+            <input ng-model="$parent.userEmail" type="text" class="form-control" placeholder="john.doe@example.com">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Mot de passe:</label>
+            <input ng-model="$parent.userPassword" type="password" class="form-control" placeholder="Mot de passe">
+        </div>
+    </div>
+    <div style="width: 100%; text-align: center;">
+        <button ng-click="doLogin();" class="btn" style="background:#387ef5; color: white; width: 80%;">M'authentifier</button>
+        <div ng-click="openRequestResetPasswordModal(); loginModal.close();" style="text-decoration: underline; color: #0000ff">Mot de passe oublié?</div>
+    </div>
+</div>

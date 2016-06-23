@@ -1,0 +1,7 @@
+.profilePage{
+    height: calc(100vh - 44px);
+    margin-top:44px;
+    overflow:auto;
+    padding-left: 20px;
+    padding-top:20px;
+}

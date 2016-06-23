@@ -1,0 +1,50 @@
+<div class="documentsPage">
+    
+    <div class="fixedMenu">
+        <button class="btn btn-success" ng-click="openCreateDocumentModal();" ng-style="{'visibility': (userService.token == undefined) ? 'hidden' : 'visible'}">Ajouter un document</button>
+        <div class="frame">
+            <ul>
+                <li>
+                    Trier par:
+                </li>
+                <li>
+                    <select ng-model="sortDocumentsBy">
+                        <option value="documentName">Nom du document</option>
+                        <option value="lastModifiedBy">Nom du dépositaire</option>
+                        <option value="lastModified">Date de modification</option>
+                        <option value="documentType" ng-show="userService.token != undefined">Type de document</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4">
+            </div>
+            <div class="col-xs-8">
+                <div class="document" ng-repeat="document in documentsService.documentsList | orderBy:sortDocumentsBy">
+                    <div class="header">
+                        <span><b>{{document.documentName}}</b></span>
+                        <div class="iconContainer">
+                            <img src="img/deleteIcon.png" ng-click="deleteDocument(document)" ng-show="userService.token != undefined" />
+                            <img src="img/editIcon.png" ng-click="openUpdateDocumentModal(document)" ng-show="userService.token != undefined" />
+                            <img src="img/downloadIcon.png" ng-click="downloadDocument(document)" />
+                        </div>
+                    </div>
+                    <div class="documentLine">
+                        <b>Depositary:</b> {{document.lastModifiedBy}}
+                    </div>
+                    <div class="documentLine">
+                        <b>Dernière modification:</b> {{document.lastModified}}
+                    </div>
+                    <div class="documentLine">
+                        <b>Type:</b> {{document.documentType}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

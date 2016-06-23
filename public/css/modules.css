@@ -1,0 +1,254 @@
+.modulePage{
+    height: calc(100vh - 44px);
+    margin-top:44px;
+    overflow:auto;
+}
+
+.modulePage .btn-success{
+    position: fixed;
+    z-index:2;
+}
+
+.shelf {
+	position: relative;
+	width: 721px;
+	border-bottom: 13px solid #24252a;
+	text-align: center;
+	padding: 0 27px;
+    margin: 20px auto;
+    background: transparent;
+}
+
+.shelf .moduleName{
+    height: 20px;
+    text-overflow: ellipsis;
+    overflow:hidden;
+}
+
+.shelf .iconLine{
+    height: 20px;
+    text-overflow: ellipsis;
+}
+
+.shelf .iconLine img{
+    width: 15px;
+    height: 15px;
+}
+
+.shelf:after {
+	position: absolute;
+	bottom: -13px;
+	left: 34px;
+	height: 10px;
+	background: transparent;
+	content: "";
+	-webkit-transform: perspective( 150 ) rotateX( -25deg );
+	   -moz-transform: perspective( 150 ) rotateX( -25deg );
+	    -ms-transform: perspective( 150 ) rotateX( -25deg );
+	        transform: perspective( 150 ) rotateX( -25deg );
+	right: 34px;
+	box-shadow: 0 0 17px 5px rgba(0, 0, 0, 0.7);
+	z-index: -1;
+}
+
+.shelf > div {
+    border-bottom: 23px solid #303138;
+    position: relative;
+    z-index: 1;
+}
+	
+.shelf > div:before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 0 23px 27px;
+    border-color: transparent transparent #303138 transparent;
+    position: absolute;
+    bottom: -23px;
+    left: -27px;
+    z-index: 2;
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+	
+.shelf > div:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 23px 0 0 27px;
+    border-color: transparent transparent transparent #303138;
+    position: absolute;
+    bottom: -23px;
+    right: -27px;
+    z-index: 2;
+}
+	
+.shelf > div > * {
+    position: relative;
+    z-index: 2;
+    top: 18px;
+    padding-left: 20px;
+}
+
+.module {
+	display: inline-block;
+	width: 142px;
+	height: 179px;
+	border-radius: 5px;
+	position: relative;
+	z-index: 1;
+}
+
+.module:after {
+	width: 100%;
+	height: 10px;
+	border-radius: 20px;
+	content: "";
+	background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	bottom: -5px;
+	-webkit-transform: perspective(600) rotateX(100deg);
+	   -moz-transform: perspective(600) rotateX(100deg);
+	    -ms-transform: perspective(600) rotateX(100deg);
+	     -o-transform: perspective(600) rotateX(100deg);
+	        transform: perspective(600) rotateX(100deg);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	left: 0;
+}
+
+.module > div {
+    width: 100%;
+    height: 100%;
+    background: #46b0e9;
+    background: rgba(70, 176, 233, 0.8);
+    border-radius: 8px 8px 5px 5px;
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    //padding: 14px 3px 3px 0;
+    overflow: hidden;
+    position: relative;
+}
+	
+.module > div:after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 100%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+}
+	
+.module > div > .logo {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+}
+		
+.module > div > .logo > img {
+    max-height: 8px;
+    width: auto;
+    margin: auto;
+    display: block;
+}
+	
+.module > div > .img {
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 1px 1px 1px 0;
+    border-radius: 0 4px 4px 0;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+		
+.module > div > .img:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 1px;
+    width: 2px;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    z-index: 3;
+}
+		
+.module > div > .img > span {
+    -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 1px 1px 1px 0;
+    border-radius: 0 4px 4px 0;
+    background: rgba(255, 255, 255, 0.2);
+    display: block;
+    position: relative;
+}
+			
+.module > div > .img > span:before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: "";
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+			
+.module > div > .img > span:after {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: "";
+    box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+			
+.module > div > .img > span > img {
+    width: 100%;
+    height: calc(100% - 40px);
+    display: block;
+    border-radius: 0 3px 3px 0;
+}
+
+				
+.module.content > div {
+	background: #fff;
+	background: rgba(222, 220, 220, 0.8);
+}
+
+.module.content > div > .logo {
+    text-align: left;
+    overflow: hidden;
+}
+
+.module.content > div > .logo > img {
+    float: left;
+    margin-left: 10px;
+}
+
+.module.content > div > .logo > img + img {
+    float: right;
+    margin-right: 7px;
+    max-height: 3px;
+    margin-top: 2px;
+}

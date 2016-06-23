@@ -1,0 +1,19 @@
+.adminPage{
+    height: calc(100vh - 80px);
+    margin-top:80px;
+    overflow:auto;
+    padding-left: 20px;
+    padding-top:20px;
+}
+
+.adminPage td img{
+    width: 25px;
+    height: 25px;
+}
+
+.adminPage .btn-success{
+    position: fixed;
+    z-index:2;
+    top:44px;
+    left: 0px;
+}

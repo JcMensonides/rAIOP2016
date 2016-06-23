@@ -1,0 +1,15 @@
+{
+	"name": "AiopApp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"cfenv": "1.0.x"
+	},
+	"repository": {},
+	"engines": {
+		"node": "4.x"
+	} 
+}

@@ -1,0 +1,32 @@
+<div style="height: 44px; background:#387ef5; color: white; display: flex; align-items: center;">
+    <span style="margin-left: auto;">
+        Modifier un utilisateur
+    </span>
+    <span ng-click="updateUserModal.close();" style="margin-left: auto; padding-right: 10px;">
+        Annuler
+    </span>
+</div>
+<div class="modal-body">
+    <div class="form">
+        <div ng-show="$parent.updateUserError != undefined" style="color: red";>
+            {{$parent.updateUserError}}
+        </div>
+        <div class="form-group">
+            <label for="email">Adresse mail:</label>
+            <input ng-model="$parent.newUserEmail" type="email" class="form-control" placeholder="john.doe@example.com">
+        </div>
+        <div class="form-group">
+            <label for="email">Prénom:</label>
+            <input ng-model="$parent.newUserFirstname" type="text" class="form-control" placeholder="Prénom">
+        </div>
+        <div class="form-group">
+            <label for="email">Nom:</label>
+            <input ng-model="$parent.newUserLastname" type="text" class="form-control" placeholder="Nom">
+        </div>
+    </div>
+    <div style="width: 100%; text-align: center;">
+        <button ng-click="updateUser();" class="btn" style="background:#387ef5; color: white; width: 80%;">Modifier l'utilisateur</button>
+    </div>
+</div>
+
+

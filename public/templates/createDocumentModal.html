@@ -1,0 +1,33 @@
+<div style="height: 44px; background:#387ef5; color: white; display: flex; align-items: center;">
+    <span style="margin-left: auto;">
+        Nouveau document
+    </span>
+    <span ng-click="createDocumentModal.close();" style="margin-left: auto; padding-right: 10px;">
+        Annuler
+    </span>
+</div>
+<div class="modal-body">
+    <form name="$parent.createDocumentForm">
+        <div style="color: red" ng-show="createDocumentError != undefined">
+            {{createDocumentError}}
+        </div>
+        <div class="form-group">
+            <label>Choisir un document</label>
+            <br/>
+            <div class="btn" ngf-select ng-model="$parent.newDocument" name="newDocument" ngf-max-size="20MB" style="background: #387ef5; color: white" >Select</div>
+            <span>{{$parent.newDocument == undefined ? "Pas de document sélectionné" : $parent.newDocument.name}}</span>
+        </div>
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="$parent.newDocumentIsPrivate">
+                    Ce document est privé
+                </label>
+            </div>
+        </div>
+        <div style="width: 100%; text-align: center;">
+            <button class="btn" type="submit" ng-click="createDocument();" style="background:#387ef5; color: white; width: 80%;">Créer le document</button>
+        </div>
+    </form>
+</div>
+
