@@ -780,7 +780,7 @@ app.delete('/api/documents/:documentId', isAuthenticatedMiddleWare, function(req
     });
 });
 
-app.get('/api/operations', isAuthenticatedMiddleWare, function(req, res){
+app.get('/api/operations', isAdminMiddleWare, function(req, res){
     /*
     Renvoie la liste des opérations
     */
@@ -799,3 +799,7 @@ app.get('*', function (req, res) {
 app.listen(appEnv.port, '0.0.0.0', function () {
   console.log('Example app listening on port 3000!');
 });
+
+//app.listen(3000, function () {
+  //console.log('Example app listening on port 3000!');
+//});

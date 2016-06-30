@@ -1,5 +1,5 @@
 <div class="modulePage">
-    <button ng-click="openCreateModuleModal();" class="btn btn-success" ng-show="userService.isAdmin">Ajouter un module</button>
+    <button ng-click="openCreateModuleModal();" class="btn btn-success" ng-show="userService.isAdmin == true || userService.isAdmin == 'true'">Ajouter un module</button>
     <div class ="shelf" ng-repeat="modulesArray in modulesBy4">
         <div>
             <div class="content module" ng-repeat="module in modulesArray">
@@ -9,7 +9,7 @@
                     </div>
                     <div class="iconLine">
                         <img ng-click="openUpdateModuleModal(module);" src="img/editIcon.png" ng-show="userService.token != undefined">
-                        <img ng-click="deleteModule(module);" src="img/deleteIcon.png" ng-show="userService.isAdmin">
+                        <img ng-click="deleteModule(module);" src="img/deleteIcon.png" ng-show="userService.isAdmin == true || userService.isAdmin == 'true'">
                     </div>
                     <div class="img" ng-click="goToModule(module);">
                         <span><img src={{module.moduleImg}}></span>

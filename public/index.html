@@ -52,7 +52,7 @@
 		<div class="right-button">
 			<span ng-show="userService.token == undefined" ng-click="openLoginModal();">Login</span>
 			<span ng-show="userService.token != undefined" >
-				<img src="img/settings.png" ng-click="goToAdminPage();" ng-show="userService.isAdmin"/>
+				<img src="img/settings.png" ng-click="goToAdminPage();" ng-show="userService.isAdmin == true || userService.isAdmin == 'true'"/>
 				<img src="img/profile.png" ng-click="goToProfilePage();"/>
 				<img src="img/logout.png" ng-click="doLogout()"/>
 			</span>

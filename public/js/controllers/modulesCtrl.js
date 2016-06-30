@@ -14,6 +14,7 @@ aiopApp.controller('modulesCtrl', function modulesCtrl($scope, $uibModal, Upload
             modulesService.modulesList = undefined;
             modulesService.getModules().then(
             function(response){
+                console.log(userService.isAdmin);
                 modulesService.modulesList = response.data; //response.data;
                 var newArray = response.data.slice();
                 $scope.modulesBy4 = [];

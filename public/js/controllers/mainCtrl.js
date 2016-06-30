@@ -15,6 +15,7 @@ aiopApp.controller('mainCtrl', function mainCtrl($scope, $uibModal, $cookies, us
         userService.userId = $cookies.get("userId");
         userService.token = $cookies.get("token");
         userService.isAdmin = $cookies.get("isAdmin");
+        console.log("isAdmin ? : "+userService.isAdmin);
     }
 
     $scope.openLoginModal = function () {

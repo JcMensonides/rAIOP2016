@@ -1,10 +1,11 @@
 
-aiopApp.controller('documentsCtrl', function documentsCtrl($scope, $uibModal, Upload, documentsService, $routeParams, userService) {
+aiopApp.controller('documentsCtrl', function documentsCtrl($scope, $uibModal, Upload, documentsService, $routeParams, userService, modulesService) {
 
     $scope.moduleId = $routeParams.moduleId;
     $scope.documentsService = documentsService;
     $scope.$parent.pageTitle= "Documents";
     $scope.$parent.isModulePage = false;
+    $scope.modulesService = modulesService;
 
     $scope.newDocument = undefined;
     $scope.openCreateDocumentModal = function () {
