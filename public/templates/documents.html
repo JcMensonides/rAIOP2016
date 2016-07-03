@@ -24,7 +24,7 @@
             <div class="col-xs-4">
             </div>
             <div class="col-xs-8">
-                <div class="document" ng-repeat="document in documentsService.documentsList | orderBy:sortDocumentsBy">
+                <div class="document" ng-repeat="document in documentsService.documentsList | orderBy:sortDocumentsBy:reverseSortOrder">
                     <div class="header">
                         <span><b>{{document.documentName}}</b></span>
                         <div class="iconContainer">

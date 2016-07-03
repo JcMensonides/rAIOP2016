@@ -9,7 +9,7 @@
                     </div>
                     <div class="iconLine">
                         <img ng-click="openUpdateModuleModal(module);" src="img/editIcon.png" ng-show="userService.token != undefined">
-                        <img ng-click="deleteModule(module);" src="img/deleteIcon.png" ng-show="userService.isAdmin == true || userService.isAdmin == 'true'">
+                        <img ng-click="openConfirmDeleteModule(module);" src="img/deleteIcon.png" ng-show="userService.isAdmin == true || userService.isAdmin == 'true'">
                     </div>
                     <div class="img" ng-click="goToModule(module);">
                         <span><img src={{module.moduleImg}}></span>

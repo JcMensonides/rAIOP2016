@@ -7,6 +7,13 @@ aiopApp.controller('documentsCtrl', function documentsCtrl($scope, $uibModal, Up
     $scope.$parent.isModulePage = false;
     $scope.modulesService = modulesService;
 
+    $scope.sortDocumentsBy = "lastModified";
+    $scope.reverseSortOrder = true;
+
+    $scope.$watch('sortDocumentsBy', function(newValue, oldValue){
+        $scope.reverseSortOrder = (newValue == "lastModified") ? true : false;
+    });
+
     $scope.newDocument = undefined;
     $scope.openCreateDocumentModal = function () {
         $scope.newDocument = undefined;

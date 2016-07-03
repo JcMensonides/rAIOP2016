@@ -88,7 +88,7 @@ aiopApp.controller('adminCtrl', function adminCtrl($scope, $routeParams, userSer
         $scope.newUserEmail = user.email;
         $scope.newUserFirstname = user.firstname;
         $scope.newUserLastname = user.lastname;
-        $scope.userId = user.userId;
+        $scope.userId = user.id;
         $scope.updateUserError = undefined;
         $scope.updateUserModal = $uibModal.open({
             animation: true,

@@ -101,14 +101,24 @@ aiopApp.controller('modulesCtrl', function modulesCtrl($scope, $uibModal, Upload
         }
     };
 
+    $scope.openConfirmDeleteModule = function(module){
+        $scope.moduleBeingDeleted = module;
+        $scope.confirmDeleteModule = $uibModal.open({
+            animation: true,
+            templateUrl: 'templates/confirmDeleteModule.html',
+            scope: $scope
+        });
+    }
     $scope.deleteModule = function(module) {
         $scope.$parent.isLoadingData = true;
         modulesService.deleteModule(module.id).then(
             function(response){
                 initModulesList();
+                $scope.confirmDeleteModule.close();
             },
             function(error){
                 alert(error);
+                $scope.confirmDeleteModule.close();
                 $scope.$parent.isLoadingData = false;
             }
         )

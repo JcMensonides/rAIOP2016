@@ -1,0 +1,15 @@
+<div style="height: 44px; background:#387ef5; color: white; display: flex; align-items: center;">
+    <span style="margin-left: auto;">
+        Supprimer le module
+    </span>
+    <span ng-click="confirmDeleteModule.close();" style="margin-left: auto; padding-right: 10px;">
+        Annuler
+    </span>
+</div>
+<div class="modal-body">
+    Voulez vous vraiment supprimer le module XX?
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="deleteModule($parent.moduleBeingDeleted)">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="confirmDeleteModule.close();">Cancel</button>
+</div>

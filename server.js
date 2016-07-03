@@ -5,6 +5,7 @@ var validator = require('validator');
 var crypto = require("crypto");
 var os= require('os');
 
+//production only
 var cfenv = require('cfenv'); //cloud foundry for bluemix
 var appEnv = cfenv.getAppEnv();
 
@@ -29,7 +30,8 @@ var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
 var gmailPassword = process.env.GMAIL_PASSWORD;
-var transporter = nodemailer.createTransport('smtps://rattrapageAiop%40gmail.com:'+gmailPassword+'@smtp.gmail.com');
+var gmailAddress = process.env.GMAIL_ADDRESS;
+var transporter = nodemailer.createTransport('smtps://'+gmailAddress+':'+gmailPassword+'@smtp.gmail.com');
 
 
 function addOperation(from, on, operationType, callback){
@@ -796,10 +798,12 @@ app.get('*', function (req, res) {
     res.sendFile(__dirname + '/public/index.html');
 });
 
+//for bluemix run
 app.listen(appEnv.port, '0.0.0.0', function () {
   console.log('Example app listening on port 3000!');
 });
 
+//for local run
 //app.listen(3000, function () {
   //console.log('Example app listening on port 3000!');
 //});
